@@ -1,27 +1,26 @@
 # Whist Tournament Maker
 
-## Deployment
-### Initial Setup
-Add the angular-cli-ghpages package
-`ng add angular-cli-ghpages
+Generate games for a whist tournament.
+The Angular app is published at [ross.grattafiori.dev/wtm](https://ross.grattafiori.dev/wtm/).
 
-Useful resources:
-[Github Pages](https://pages.github.com/)
-[Angular Deployment](https://angular.dev/tools/cli/deployment#automatic-deployment-with-the-cli)
-[angular-cli-gh-pages Package](https://www.npmjs.com/package/angular-cli-ghpages)
+## Develop
 
-### Deploying to production
-`ng deploy --base-href=/wtm/`
+Install the dependency versions recorded in [package-lock.json](package-lock.json), then start the development server:
 
-Visit ross.grattafiori.dev/wtm to verify deployment
+```sh
+npm ci
+npm start
+```
 
-## Resouces
-[Durango Bill's Whist Starting Blocks](https://www.durangobill.com/BridgeCyclicSolutions.html)
-[Richard Devenzia's Whist Tables](https://www.devenezia.com/downloads/round-robin/index.html)
+Open `http://localhost:4200`.
+Use `npm run build` for a production build and `npm test` for the configured Karma tests.
+Scripts live in [package.json](package.json).
 
-## Future Ideas
-* Multipeer connectivity and scoring
-    * Users connect to a game, similar to kahoot then enter their scores after each game, app automatically keeps track of a leaderboard
-    * Scoring algorithm needs to support uneven amount of games played
-* Monolithic scoring, user selects winning team for each table each round, program keeps track of indvididual scores
-    * Separate leaderboard tab
+## Publish
+
+The configured GitHub Pages deployment command is `npx ng deploy --base-href=/wtm/`.
+Run it only when ready to publish.
+The deployment target is defined in [angular.json](angular.json).
+
+Scheduling references: [Durango Bill's whist blocks](https://www.durangobill.com/BridgeCyclicSolutions.html) and [DeVenezia's whist tables](https://www.devenezia.com/downloads/round-robin/index.html).
+Scoring and multiplayer participation remain future ideas.
